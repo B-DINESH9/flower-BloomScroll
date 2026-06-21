@@ -41,7 +41,7 @@ const App: React.FC = () => {
           if (total > 0) setLoadingPct(Math.round((received / total) * 50)); // 0-50%
         }
 
-        const blob = new Blob(chunks, { type: 'video/mp4' });
+        const blob = new Blob(chunks as BlobPart[], { type: 'video/mp4' });
         const blobUrl = URL.createObjectURL(blob);
 
         // Step 2: Create offscreen video to extract frames
